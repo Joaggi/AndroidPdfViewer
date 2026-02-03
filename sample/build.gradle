@@ -31,6 +31,19 @@ android {
     buildFeatures {
         buildConfig true
     }
+
+    buildTypes {
+        debug { }
+
+        release {
+            minifyEnabled true
+        }
+
+        production {
+            initWith(release)
+            matchingFallbacks = ['release']
+        }
+    }
     
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
